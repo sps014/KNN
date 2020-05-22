@@ -1,0 +1,13 @@
+C:\Users\shive\Desktop\Test\KNN\KNN\obj\Debug\netcoreapp3.1\KNN.csprojAssemblyReference.cache
+C:\Users\shive\Desktop\Test\KNN\KNN\obj\Debug\netcoreapp3.1\KNN.AssemblyInfoInputs.cache
+C:\Users\shive\Desktop\Test\KNN\KNN\obj\Debug\netcoreapp3.1\KNN.AssemblyInfo.cs
+C:\Users\shive\Desktop\Test\KNN\KNN\obj\Debug\netcoreapp3.1\KNN.csproj.CoreCompileInputs.cache
+C:\Users\shive\Desktop\Test\KNN\KNN\bin\Debug\netcoreapp3.1\KNN.exe
+C:\Users\shive\Desktop\Test\KNN\KNN\bin\Debug\netcoreapp3.1\KNN.deps.json
+C:\Users\shive\Desktop\Test\KNN\KNN\bin\Debug\netcoreapp3.1\KNN.runtimeconfig.json
+C:\Users\shive\Desktop\Test\KNN\KNN\bin\Debug\netcoreapp3.1\KNN.runtimeconfig.dev.json
+C:\Users\shive\Desktop\Test\KNN\KNN\bin\Debug\netcoreapp3.1\KNN.dll
+C:\Users\shive\Desktop\Test\KNN\KNN\bin\Debug\netcoreapp3.1\KNN.pdb
+C:\Users\shive\Desktop\Test\KNN\KNN\obj\Debug\netcoreapp3.1\KNN.dll
+C:\Users\shive\Desktop\Test\KNN\KNN\obj\Debug\netcoreapp3.1\KNN.pdb
+C:\Users\shive\Desktop\Test\KNN\KNN\obj\Debug\netcoreapp3.1\KNN.genruntimeconfig.cache
