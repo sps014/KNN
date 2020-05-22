@@ -3,5 +3,5 @@
 Added KDTree
 
 Todo
-KDTree Generaliztion similar to pytorch
+KDTree Generalization similar to pytorch
 BallTrees
