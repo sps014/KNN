@@ -48,6 +48,43 @@ namespace KNN
             return node;
 
         }
+        public T NearestPoint(T point)
+        {
+            return GetNearestPoint(point, Root);
+        }
+        private T GetNearestPoint(T point, KDNode<T> parent, int depth = 0)
+        {
+            if (parent is null)
+                return default;
+
+            int axis = depth % K;
+
+            KDNode<T> nextBranch, oppositeBranch;
+
+            if ((point as dynamic)[axis] < (parent.Value as dynamic)[axis])
+            {
+                nextBranch = parent.Left;
+                oppositeBranch = parent.Right;
+            }
+            else
+            {
+                nextBranch = parent.Right;
+                oppositeBranch = parent.Left;
+            }
+
+            T br = GetNearestPoint(point, nextBranch, depth + 1);
+            T best = CloserDistance(point, br, parent.Value);
+
+            var distancePlane = Math.Abs((point as dynamic)[axis] - (parent.Value as dynamic)[axis]);
+
+            if (Distance(point, best) > distancePlane)
+            {
+                T opposite = GetNearestPoint(point, oppositeBranch, depth + 1);
+                best = CloserDistance(point, opposite, best);
+            }
+
+            return best;
+        }
         private T[] Split(List<T> data, int start, int end)
         {
             int size = end - start + 1;
@@ -62,8 +99,6 @@ namespace KNN
 
         T CloserDistance(T pivot, T p1, T p2)
         {
-            if (Distance is null)
-                Distance = EuclidianDistance;
 
             if (p1 is null)
                 return p2;
@@ -85,6 +120,19 @@ namespace KNN
 
             return Math.Sqrt(dx * dx + dy * dy);
         }
-        public Func<dynamic,dynamic,double> Distance;
+        private Func<dynamic, dynamic, double> distance = null;
+        public Func<dynamic, dynamic, double> Distance
+        {
+            get
+            {
+                if (distance is null)
+                    distance = EuclidianDistance;
+                return EuclidianDistance;
+            }
+            set
+            {
+                distance=value;
+            }
+        }
     }
 }

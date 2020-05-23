@@ -26,12 +26,13 @@ namespace KNN
 
 
             tree.CreateBalancedTree(list);
+            var point=tree.NearestPoint(new double[] { 3,5});
 
-            string str = JsonSerializer.Serialize(tree.Root);
+            //string str = JsonSerializer.Serialize(tree.Root);
 
-            StreamWriter writer = new StreamWriter("mon.txt");
-            writer.Write(str);
-            writer.Close();
+            //StreamWriter writer = new StreamWriter("mon.txt");
+            //writer.Write(str);
+            //writer.Close();
         }
     }
 }
