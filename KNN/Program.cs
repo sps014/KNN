@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 
 namespace KNN
 {
@@ -10,20 +12,26 @@ namespace KNN
         
         static void Main(string[] args)
         {
-            var list = new List<PointF>()
+
+            var list = new List<double[]>()
             {
-                new PointF(4,4),
-                new PointF(5,1),
-                new PointF(3,6),
-                new PointF(6,3),
-                new PointF(2,5)
+                new double[]{4,4},
+                new double[]{5,1},
+                new double[]{3,6},
+                new double[]{6,3},
+                new double[]{2,5}
             };
 
-            KDTree tree = new KDTree();
-            tree.BuildKDTree(list);
-            var p=tree.NearestPoint(new PointF(1, 5));
-            
-            
+            KDTree<double[]> tree = new KDTree<double[]>();
+
+
+            tree.CreateBalancedTree(list);
+
+            string str = JsonSerializer.Serialize(tree.Root);
+
+            StreamWriter writer = new StreamWriter("mon.txt");
+            writer.Write(str);
+            writer.Close();
         }
     }
 }
