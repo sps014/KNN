@@ -13,26 +13,21 @@ namespace KNN
         static void Main(string[] args)
         {
 
-            var list = new List<double[]>()
+            var list = new List<PointF>()
             {
-                new double[]{4,4},
-                new double[]{5,1},
-                new double[]{3,6},
-                new double[]{6,3},
-                new double[]{2,5}
+                new PointF(4,4),
+                new PointF(5,1),
+                new PointF(3,6),
+                new PointF(6,3),
+                new PointF(2,5)
             };
 
-            KDTree<double[]> tree = new KDTree<double[]>();
+            KDTree tree = new KDTree();
 
 
-            tree.CreateBalancedTree(list);
-            var point=tree.NearestPoint(new double[] { 3,5});
+            tree.BuildKDTree(list);
+            var point=tree.NearestPoint(new PointF(3, 5));
 
-            //string str = JsonSerializer.Serialize(tree.Root);
-
-            //StreamWriter writer = new StreamWriter("mon.txt");
-            //writer.Write(str);
-            //writer.Close();
         }
     }
 }
