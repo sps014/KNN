@@ -1,6 +1,7 @@
 # KNN
  
 Added KDTree
+Optimized Nearest Neibour 2 Dimensional Search 
 
 # Todo
 Bruteforce Technique
